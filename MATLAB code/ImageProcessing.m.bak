@@ -17,6 +17,7 @@ figure,imshow(im),title('resized image');
 [r, c, d] = size(im);
 if d == 3
  gray = im2double(rgb2gray(im));
+[58]
 else
  gray = im2double(im);
 end
@@ -32,6 +33,7 @@ plot(selectStrongest(points11,100))
 f2 = mean(f1);
 load feature.mat;
 lab = ones(1,37);
+[59]
 lab(13:37)=2;
 mdl = fitcknn(feature,lab);
 yfit = predict(mdl,f2);
@@ -44,6 +46,7 @@ end
 
 instrumentObjects=instrfind; 
  delete(instrumentObjects)
+[60]
 a=serial('COM4','BaudRate',9600);
 fopen(a);
  if yfit==1
